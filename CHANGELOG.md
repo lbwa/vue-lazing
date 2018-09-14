@@ -1,5 +1,5 @@
-<a name="0.0.1"></a>
-## 0.0.1 (2018-09-14)
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/lbwa/vue-lazing/compare/512905c...v0.1.0) (2018-09-14)
 
 
 ### Features
