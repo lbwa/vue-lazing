@@ -2,11 +2,9 @@
   "name": "vue-lazing",
   "version": "0.1.0",
   "description": "A lazy loading component work with Vue.js 2.",
-  "main": "index.js",
+  "main": "dist/vue-lazing.min.js",
   "files": [
-    "dist",
-    "lib",
-    "index.js"
+    "dist"
   ],
   "repository": "git@github.com:lbwa/vue-lazing.git",
   "homepage": "https://github.com/lbwa/vue-lazing#readme",
