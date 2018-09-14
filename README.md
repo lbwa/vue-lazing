@@ -30,7 +30,7 @@ import VueLazing from 'vue-lazing'
 Vue.use(VueLazing)
 ```
 
-- Use `<vue-lazing>` components. Optional, you can input 3 kind of parameters to control how to lazy loading.
+- Use `<vue-lazing>` components. Optionally, you can input 3 kind of parameters to control how to lazy loading.
 
 ```html
 <!-- in single component file using default options -->
