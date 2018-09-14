@@ -1,6 +1,7 @@
 const path = require('path')
 const babel = require('rollup-plugin-babel')
 const replace = require('rollup-plugin-replace')
+const { terser } = require('rollup-plugin-terser')
 const vue = require('rollup-plugin-vue').default
 const version = process.env.version || require('../package.json').version
 
@@ -15,11 +16,12 @@ const banner =
 
 const build = {
   'development': {
-    entry: resolve('lib/index.vue'),
+    entry: resolve('index.js'),
     dest: resolve('dist/vue-lazing.js'),
     format: 'umd',
     env: 'development',
-    banner
+    banner,
+    plugins: []
   },
 
   'production': {
@@ -27,7 +29,14 @@ const build = {
     dest: resolve('dist/vue-lazing.min.js'),
     format: 'umd',
     env: 'production',
-    banner
+    banner,
+    plugins: [
+      terser({
+        output: {
+          comments: /^!/
+        }
+      })
+    ]
   }
 }
 
@@ -39,9 +48,10 @@ function createConfig (opts) {
       file: options.dest,
       format: options.format,
       banner: options.banner,
-      name: options.moduleName || 'vue-lazing' // global name in window
+      name: 'VueLazing' // global name in window
     },
     plugins: [
+      ...options.plugins,
       babel({
         exclude: 'node_modules/**'
       }),
