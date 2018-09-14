@@ -25,7 +25,7 @@ const build = {
   },
 
   'production': {
-    entry: resolve('lib/index.vue'),
+    entry: resolve('lib/index.js'),
     dest: resolve('dist/vue-lazing.min.js'),
     format: 'umd',
     env: 'production',
