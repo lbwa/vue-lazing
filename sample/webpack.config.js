@@ -5,15 +5,17 @@ const WebpackBar = require('webpackbar')
 
 const resolve = p => path.resolve(__dirname, '../', p)
 
+const devMode = process.env.NODE_ENV === 'development'
+
 const config = {
-  mode: 'development',
+  mode: devMode ? 'development' : 'production',
   context: resolve('./'),
   entry: {
     sample: resolve('sample/index.js')
   },
   output: {
     path: resolve('./docs'),
-    filename: '[name].[hash].js'
+    filename: devMode ? '[name].[hash].js' : '[name].[contenthash:8].js'
   },
   resolve: {
     extensions: ['.js', '.vue'],
@@ -42,15 +44,6 @@ const config = {
       }
     ]
   },
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    host: '127.0.0.1',
-    port: 5000,
-    overlay: {
-      warnings: false,
-      errors: true
-    }
-  },
   plugins: [
     new VueLoaderPlugin(),
     new HTMLWebpackPlugin({
@@ -59,11 +52,39 @@ const config = {
     }),
     new WebpackBar({
       done (sharedState, ctx) {
+        if (!devMode) return
         const server = config.devServer
         console.log(`\nhttp://${server.host}:${server.port}\n`)
       }
     })
   ]
+}
+
+if (devMode) {
+  config.devtool = 'cheap-module-eval-source-map',
+  config.devServer = {
+    host: '127.0.0.1',
+      port: 5000,
+        overlay: {
+      warnings: false,
+        errors: true
+    }
+  }
+} else {
+  config.optimization = {
+    runtimeChunk: {
+      name: 'runtime'
+    },
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          name: 'vendor'
+        }
+      }
+    }
+  }
 }
 
 module.exports = config
