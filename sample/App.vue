@@ -1,5 +1,5 @@
 <template>
-  <vue-lazing :threshold="0.9" class="app__container">
+  <vue-lazing :threshold="0.5" class="app__container">
     <div class="app__placeholder">
       <p class="placeholder__tips">scroll to bottom</p>
     </div>
