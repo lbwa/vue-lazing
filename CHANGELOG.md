@@ -1,3 +1,13 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/lbwa/vue-lazing/compare/v0.1.0...v0.1.1) (2018-09-14)
+
+
+### Bug Fixes
+
+* package mian field ([40ae477](https://github.com/lbwa/vue-lazing/commit/40ae477))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/lbwa/vue-lazing/compare/512905c...v0.1.0) (2018-09-14)
 
