@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/lbwa/vue-lazing/compare/v0.2.0...v0.2.1) (2018-09-15)
+
+
+### Bug Fixes
+
+* correct building entry ([c21f2b6](https://github.com/lbwa/vue-lazing/commit/c21f2b6))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/lbwa/vue-lazing/compare/v0.1.1...v0.2.0) (2018-09-15)
 
