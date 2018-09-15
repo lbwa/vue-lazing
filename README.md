@@ -1,8 +1,10 @@
-## vue-lazing [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-lazing.svg?style=flat-square)](https://www.npmjs.com/package/vue-lazing) [![npm](https://img.shields.io/npm/v/vue-lazing.svg?style=flat-square)](https://www.npmjs.com/package/vue-lazing)
+# vue-lazing [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-lazing.svg?style=flat-square)](https://www.npmjs.com/package/vue-lazing) [![npm](https://img.shields.io/npm/v/vue-lazing.svg?style=flat-square)](https://www.npmjs.com/package/vue-lazing)
 
 > A lazy loading component work with Vue.js 2, and based on [IntersectionObserver].
 
 - [Online sample](https://lbwa.github.io/vue-lazing)
+
+- [Play on the playground](https://jsfiddle.net/imbowen/28fracLu/)
 
 [IntersectionObserver]:https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
