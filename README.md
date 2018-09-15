@@ -52,13 +52,15 @@ Once target `<img>` element's visibility is over `threshold` value, target's `sr
 
 ## API
 
-All API is based on [IntersectionObserver].
+All API is based on [IntersectionObserver]. There are more [practical experiences].
 
 | Options | Type | Default | Description |
 | ------- | ---- | ------- | ----------- |
 | root | HTMLElement | null ( means viewport ) | The element that is used as the viewport for checking visibility of the target. Must be the ancestor of the target. |
 | rootMargin | String | `0px` | Margin around the root. |
 | threshold | Number | 0.1 (means 10%) | A number indicate at what percentage of the target's visibility the replace runner should be executed. |
+
+[practical experiences]:https://developers.google.com/web/updates/2016/04/intersectionobserver
 
 ## Compatibility
 
@@ -67,3 +69,7 @@ You can check `IntersectionObserver` compatibility from [here], and there is a [
 [here]:https://caniuse.com/#search=IntersectionObserver
 
 [polyfill]:https://github.com/w3c/IntersectionObserver/tree/master/polyfill
+
+## Changelog
+
+[Changelog](./CHANGELOG.md)

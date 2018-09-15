@@ -1,5 +1,5 @@
 /*!
-  * vue-lazing v0.0.1
+  * vue-lazing v0.1.1
   * (c) 2018 Bowen<Github: lbwa>
   * @license MIT
   */
@@ -11,6 +11,12 @@
 
   var load = {
     name: 'vue-lazing',
+
+    data() {
+      return {
+        observer: {}
+      };
+    },
 
     render(h) {
       return h('div', {
@@ -45,12 +51,17 @@
 
     mounted() {
       this.imgBox = [...this.$refs.box.querySelectorAll('img')];
+      this.buildObserver();
       this.iterator();
+    },
+
+    beforeDestroy() {
+      this.disableObserve();
     },
 
     methods: {
       buildObserver() {
-        return new IntersectionObserver(this.replaceRunner, {
+        this.observer = new IntersectionObserver(this.replaceRunner, {
           root: this.root,
           rootMargin: this.rootMargin,
           threshold: this.threshold
@@ -59,7 +70,7 @@
 
       iterator() {
         this.imgBox.forEach(img => {
-          this.buildObserver().observe(img);
+          this.observer.observe(img);
         });
       },
 
@@ -69,6 +80,10 @@
           const img = entry.target;
           img.src = img.getAttribute('data-src');
         });
+      },
+
+      disableObserve() {
+        this.observer.disconnect();
       }
 
     }
