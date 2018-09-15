@@ -1,5 +1,5 @@
 /*!
-  * vue-lazing v0.1.1
+  * vue-lazing v0.2.0
   * (c) 2018 Bowen<Github: lbwa>
   * @license MIT
   */
@@ -56,7 +56,7 @@
     },
 
     beforeDestroy() {
-      this.disableObserve();
+      this.disableObserver();
     },
 
     methods: {
@@ -82,7 +82,7 @@
         });
       },
 
-      disableObserve() {
+      disableObserver() {
         this.observer.disconnect();
       }
 
